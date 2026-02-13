@@ -1,0 +1,12 @@
+@model Movie
+
+@{
+    ViewData["Title"] = "Movie Added";
+}
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Movie Added!</h4>
+    <p><strong>@Model.Title</strong> has been saved to the collection.</p>
+    <hr />
+    <a asp-controller="Movie" asp-action="Add" class="btn btn-success">Add Another Movie</a>
+</div>
