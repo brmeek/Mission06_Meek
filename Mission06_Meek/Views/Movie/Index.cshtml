@@ -22,7 +22,8 @@
                 <th>Copied to Plex</th>
                 <th>Lent To</th>
                 <th>Notes</th>
-                <th class="text-center">Actions</th>
+                <th class="text-center">Edit</th>
+                <th class="text-center">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,8 @@
                     <td>@movie.Notes</td>
                     <td class="text-center">
                         <a asp-controller="Movie" asp-action="Edit" asp-route-id="@movie.MovieId" class="btn btn-sm btn-primary me-2">Edit</a>
+                    </td>
+                    <td class="text-center">
                         <a asp-controller="Movie" asp-action="Delete" asp-route-id="@movie.MovieId" class="btn btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
