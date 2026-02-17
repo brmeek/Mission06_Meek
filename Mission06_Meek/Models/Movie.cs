@@ -6,26 +6,27 @@ public class Movie
 {
     public int MovieId { get; set; }
 
-    [Required]
-    public string Category { get; set; } = string.Empty;
+    public int? CategoryId { get; set; }
+    public Category? Category { get; set; }
 
     [Required]
     public string Title { get; set; } = string.Empty;
 
     [Required]
-    [Range(1888, 2100)]
+    [Range(1888, 2100, ErrorMessage = "Year must be 1888 or later.")]
     public int Year { get; set; }
 
-    [Required]
-    public string Director { get; set; } = string.Empty;
+    public string? Director { get; set; }
+
+    public string? Rating { get; set; }
 
     [Required]
-    [RegularExpression("^(G|PG|PG-13|R)$", ErrorMessage = "Rating must be G, PG, PG-13, or R.")]
-    public string Rating { get; set; } = string.Empty;
-
-    public bool? Edited { get; set; }
+    public bool Edited { get; set; }
 
     public string? LentTo { get; set; }
+
+    [Required]
+    public bool CopiedToPlex { get; set; }
 
     [StringLength(25)]
     public string? Notes { get; set; }
